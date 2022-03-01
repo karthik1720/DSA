@@ -1,0 +1,48 @@
+#include<stdio.h>
+
+void getInput();
+void bubbleSort();
+void printOutput();
+void main ()    
+{    
+    int size;
+    int arr[size];
+    printf("\n\t\tDSA Assignment"\n);
+    printf("\nEnter the length array : "); 
+    scanf("%d",&size);
+    printf("\nEnter the elements: ");
+    getInput(arr, size);
+    bubbleSort(arr, size);  
+    printf("\nSorted Elements are... \n");    
+    printOutput(arr, size);  
+} 
+
+void getInput(int arr[], int size)
+{
+    for(int i = 0; i<size;i++)
+    scanf("%d",&arr[i]);
+}
+
+ void printOutput(int arr[], int size)
+    {  
+    for(int i = 0; i < size; i++)    
+        printf("%d ",arr[i]);    
+    }  
+    
+ void bubbleSort(int arr[], int size)  
+ {  
+   int temp;  
+   for(int i = 0; i < size; i++)    
+    {    
+      for(int j = 1; j < size-i; j++)    
+        {    
+            if(arr[j] < arr[j-1])    
+            {    
+                temp = arr[j-1];    
+                arr[j-1] = arr[j];    
+                arr[j] = temp;     
+            }     
+        }     
+    }     
+ }  
+   
